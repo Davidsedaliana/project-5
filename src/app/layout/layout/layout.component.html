@@ -1,0 +1,22 @@
+<app-header ></app-header>
+
+<mat-drawer-container style="height: 91%;">
+    <mat-drawer mode="side" opened class="layout_routers">  
+<mat-button-toggle-group>
+          
+    <div class="admin_layout_flex">
+        <mat-button-toggle   mat-raised-button style="text-transform: uppercase; margin-top: 20px; height: 50px;width: 200px;color:black;"[routerLink]="'/'" routerLinkActive="active">Home</mat-button-toggle>
+        <mat-button-toggle [routerLink]="'inventory'" mat-raised-button style="text-transform: uppercase; margin-top: 20px; height: 50px;width: 200px;color:black;" routerLinkActive="active">Inventory</mat-button-toggle>
+        <mat-button-toggle  mat-raised-button style="text-transform: uppercase; margin-top: 20px; height: 50px;width: 200px;color:black;"[routerLink]="'reports'" routerLinkActive="active">Reports</mat-button-toggle>
+        <mat-button-toggle mat-raised-button style="text-transform: uppercase;margin-top: 20px; height: 50px; width: 200px;color:black;"  [routerLink]="'billing'" routerLinkActive="active">Billing</mat-button-toggle>
+        <mat-button-toggle mat-raised-button style="text-transform: uppercase; margin-top: 20px; height: 50px;width: 200px;color:black;" [routerLink]="'profile'" class="nav_a">Profile</mat-button-toggle>
+
+    </div> 
+</mat-button-toggle-group>
+
+    </mat-drawer>
+    <mat-drawer-content>  
+        <router-outlet ></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>
+<app-footer></app-footer>

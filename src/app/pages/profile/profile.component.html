@@ -1,0 +1,56 @@
+<div *ngFor="let item of data" style="display: flex; justify-content: flex-end;" >{{item.first_name}}  {{item.last_name}}</div>
+<div class="error_flex" *ngIf="error"> Неправильно введены данные<mat-icon (click)="close()">close</mat-icon></div>
+<form  style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start;" #addUser="ngForm"  [formGroup]="form" *ngFor="let item of data" >
+    <div class="mb-3" >
+      <label for="email" class="form-label">Email address</label>
+      <div style="display: flex;">
+        <input type="email" class="form-control"  [value]="item.email" disabled id="email">
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="name" class="form-label">First name</label>
+     <div style="display: flex;">
+        <input type="text" class="form-control" id="name" formControlName="name"> 
+    </div> 
+    
+    </div>
+    <span *ngIf="form.get('name')?.hasError('required') && (form.get('name')?.dirty||form.get('name')?.touched || isSubmitted)" style="color:red;">Это поле обязательно для заполнения!</span> 
+    <span *ngIf="form.get('name')?.hasError('minlength')" style="color:red;">Имя должно содержать минимум 2 символа</span> 
+    <span *ngIf="form.get('name')?.hasError('maxlength')" style="color:red;">имя не должно превышать 255 символов</span> 
+
+    <div class="mb-3">
+        <label for="lname" class="form-label" >Last name</label>
+        <div style="display: flex;">
+            <input type="text"  class="form-control" formControlName="lname"  id="lname">
+        </div>
+      </div>
+      <span *ngIf="form.get('lname')?.hasError('required') && (form.get('lname')?.dirty||form.get('lname')?.touched || isSubmitted)" style="color:red;">Это поле обязательно для заполнения!</span> 
+      <span *ngIf="form.get('lname')?.hasError('maxlength')" style="color:red;">Фамилия не должна превышать 255 символов</span> 
+      <span *ngIf="form.get('lname')?.hasError('minlength')" style="color:red;">Фамилия должна содержать минимум 2 символа</span> 
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone</label>
+        
+      <div style="display:flex; "> 
+         <input type="tel"   class="form-control" id="phone" formControlName="phone">
+        
+        </div>
+      </div>
+      <span *ngIf="form.get('phone')?.hasError('required') && (form.get('phone')?.dirty||form.get('phone')?.touched || isSubmitted)" style="color:red;">Это поле обязательно для заполнения!</span> 
+      <span *ngIf="form.get('phone')?.hasError('maxlength')" style="color:red;">не больше 10 символов</span> 
+      <span *ngIf="form.get('phone')?.hasError('minlength')" style="color:red;">не меньше 10 симолов</span> 
+      <span *ngIf="form.get('phone')?.hasError('pattern')" style="color:red;">не должен содержать +7 в начале</span> 
+      <div class="mb-3">
+        <label for="url" class="form-label">Url</label>
+        
+         <div style="display: flex;">
+            <input type="text"class="form-control" id="url"  formControlName="url">
+            </div>
+      </div>
+      <div class="mb-3">
+
+      <button class="btn btn-light"(click)="edit(item,item.id)" [disabled]="this.type" >Edit</button>
+        <button *ngIf="this.type" type="submit" (click)="onSubmit()"  class="btn btn-light" [disabled]="this.form.invalid">Save</button>
+      </div>
+<div class="alert_flex" *ngIf="sucsess" style="color:green">данные успешно обновлены</div>
+
+  </form>

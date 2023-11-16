@@ -1,0 +1,14 @@
+<header class="header">
+    <div class="container3">
+    
+    <div class="logo_image">
+        <img src="../../../assets/images/logo.PNG" [routerLink]="'/'" style="cursor: pointer; width: 125px;vertical-align: bottom;;">
+    </div>
+
+    <div *ngFor="let item of data " >
+        <button mat-raised-button (click)="logout()">LogOut</button>
+    </div>          
+    </div>
+
+</header>   
+

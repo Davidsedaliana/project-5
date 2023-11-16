@@ -1,0 +1,9 @@
+.alert_flex{
+    display: flex;
+    justify-content: center;
+}
+.error_flex{
+    display: flex;
+    justify-content: center;
+    color:red
+}

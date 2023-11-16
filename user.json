@@ -1,0 +1,13 @@
+{
+  "users": [
+    {
+      "email": "viktorbar@mail.ru",
+      "first_name": "Лука",
+      "last_name": "Баринов",
+      "phone": "+79154040028",
+      "url": "profile url",
+      "id": 0,
+      "role": "admin"
+    }
+  ]
+}

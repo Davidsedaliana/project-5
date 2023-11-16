@@ -1,0 +1,18 @@
+<form [formGroup]="form" style="display: flex; flex-direction: column; align-items: center; padding-top: 100px;" (ngSubmit)="onSubmit(addUser.value)" #addUser="ngForm">
+  <h3>Sign in</h3>
+    <div class="form-outline mb-4">
+      <input type="email" id="form2Example1" class="form-control" formControlName="email" placeholder="Введите почту">
+      <label class="form-label" for="form2Example1" >Ваша почта</label>
+    </div>
+  
+    <div class="form-outline mb-4">
+      <input type="password" id="form2Example2" class="form-control" formControlName="password" placeholder="Введите пароль">
+      <label class="form-label" for="form2Example2">Пароль</label>
+    </div>
+  
+   
+  
+    <button type="submit" class="btn btn-primary btn-block mb-4"  >Войти</button>
+<div *ngIf="error" style="color:red;">Invalid Email or Password</div>
+  
+  </form>

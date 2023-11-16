@@ -1,0 +1,151 @@
+.header{
+    padding-left: 80px;
+
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+    
+    
+}
+img{
+    mix-blend-mode: multiply;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    font-family: 'Sen';
+    font-size: 14px;
+    position: relative;
+    list-style: none;
+    
+}
+.burger{
+    display: flex;
+    flex-direction: column;
+    line-height: 7px;
+    cursor: pointer;
+}
+.nav4{
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Sen';
+    font-size: 14px;
+    position: relative;
+    list-style: none;
+    position: absolute;
+    top: 55px;
+    left:400px;
+    background: #FFD050;
+    display: none;
+}
+.nav-item{
+    margin-left: 10px;
+
+}
+.nav li{
+    margin-left: 24px;
+    
+}
+
+.contact_us{
+    margin-right: 10px
+}
+.nav_button a{
+    text-decoration: none;
+    color:  #232536;
+    font-weight: 700;
+    font-size: 18px;
+}
+.nav_button{
+    border: 1px solid;
+    padding-left: 48px;
+    padding-right: 48px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    margin-right: 40px;
+}
+
+.logo_image{
+    align-self: center;
+}
+footer{
+    background-color: #232536;
+    color: white;
+    padding-left: 80px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-right: 80px;
+
+}
+.container{
+    max-width: 1280px;
+    margin: auto;
+}
+.container2{
+ 
+   max-width: 1280px;
+   margin: auto;
+  
+}
+.container3{
+    display: flex;
+    justify-content:space-between ;
+}
+.nav2{
+  display: flex;
+  
+    font-family: 'Sen';
+    font-size: 16px;
+}
+.nav3{
+display: flex;
+justify-content: space-between;
+font-family: Inter;
+font-size: 16px;
+font-weight: 400;
+line-height: 28px;
+letter-spacing: 0px;
+text-align: left;
+
+
+}
+
+.burger:hover .nav4{
+    display: block;
+}
+.burger{
+    display: block;
+}
+
+
+.mrg-t{
+    margin-top: 16px;
+}
+.burger{
+    display: none;
+}
+.menu_display{
+    display: none;
+}
+
+@media screen and (max-width:750px) {
+    .pos{
+        display: none;
+    }
+    .burger{
+        display: block;
+        margin-right: 10px;
+    }
+    .nav-item{
+        margin-top: 10px;
+    
+    }
+    .menu_display{
+        display: block;
+    }
+    
+}
+  
